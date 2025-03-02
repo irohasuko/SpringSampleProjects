@@ -25,12 +25,19 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public void createUser(UserEntity user) {
+    public void createUser(String name, String email) {
+        UserEntity user = new UserEntity();
+        user.setName(name);
+        user.setEmail(email);
         userRepository.save(user);
     }
 
-    public void updateUser(int id, UserEntity updatedUser) {
-        userRepository.update(id, updatedUser);
+    public void updateUser(int id, String name, String email) {
+        UserEntity updatedUser = new UserEntity();
+        updatedUser.setId(id);
+        updatedUser.setName(name);
+        updatedUser.setEmail(email);
+        userRepository.update(updatedUser);
     }
 
     public void deleteUser(int id) {

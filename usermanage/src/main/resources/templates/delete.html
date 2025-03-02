@@ -12,7 +12,6 @@
     <p>Email: <span th:text="${user.email}"></span></p>
 
     <form th:action="@{/users/{id}/delete(id=${user.id})}" method="post">
-        <input type="hidden" name="_method" value="delete">
         <button type="submit">削除</button>
     </form>
     <a href="/users">戻る</a>

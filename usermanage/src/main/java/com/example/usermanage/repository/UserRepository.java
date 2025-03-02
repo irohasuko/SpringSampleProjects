@@ -45,9 +45,9 @@ public class UserRepository {
     }
 
     // ユーザ更新
-    public void update(int id, UserEntity user) {
+    public void update(UserEntity user) {
         String sql = "UPDATE users SET name = ?, email = ? WHERE id = ?";
-        jdbcTemplate.update(sql, user.getName(), user.getEmail(), id);
+        jdbcTemplate.update(sql, user.getName(), user.getEmail(), user.getId());
     }
 
     // ユーザ削除

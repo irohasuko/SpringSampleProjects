@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.usermanage.entity.UserEntity;
 import com.example.usermanage.service.UserService;
@@ -41,14 +42,13 @@ public class UserController {
     // ユーザ追加画面
     @GetMapping("/create")
     public String createUserForm(Model model) {
-        model.addAttribute("user", new UserEntity());
         return "create";
     }
 
     // ユーザ追加処理
     @PostMapping("/create")
-    public String createUser(@ModelAttribute UserEntity user) {
-        userService.createUser(user);
+    public String createUser(@RequestParam String name, @RequestParam String email) {
+        userService.createUser(name, email);
         return "redirect:/users";
     }
 
@@ -62,8 +62,8 @@ public class UserController {
 
     // ユーザ更新処理
     @PostMapping("/{id}/edit")
-    public String updateUser(@PathVariable int id, @ModelAttribute UserEntity user) {
-        userService.updateUser(id, user);
+    public String updateUser(@PathVariable int id, @RequestParam String name, @RequestParam String email) {
+        userService.updateUser(id, name, email);
         return "redirect:/users/" + id;
     }
 
