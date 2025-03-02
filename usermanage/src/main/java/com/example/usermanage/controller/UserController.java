@@ -26,59 +26,48 @@ public class UserController {
     // ユーザ一覧
     @GetMapping
     public String listUsers(Model model) {
-        List<UserEntity> userList = userService.getAllUsers();
-        model.addAttribute("userList", userList);
-        return "list";
+        return null;
     }
 
     // ユーザ詳細
     @GetMapping("/{id}")
     public String userDetail(@PathVariable int id, Model model) {
-        UserEntity user = userService.getUserById(id);
-        model.addAttribute("user", user);
-        return "detail";
+        return null;
     }
 
     // ユーザ追加画面
     @GetMapping("/create")
     public String createUserForm(Model model) {
-        return "create";
+        return null;
     }
 
     // ユーザ追加処理
     @PostMapping("/create")
     public String createUser(@RequestParam String name, @RequestParam String email) {
-        userService.createUser(name, email);
-        return "redirect:/users";
+        return null;
     }
 
     // ユーザ更新画面
     @GetMapping("/{id}/edit")
     public String updateUserForm(@PathVariable int id, Model model) {
-        UserEntity user = userService.getUserById(id);
-        model.addAttribute("user", user);
-        return "update";
+        return null;
     }
 
     // ユーザ更新処理
     @PostMapping("/{id}/edit")
     public String updateUser(@PathVariable int id, @RequestParam String name, @RequestParam String email) {
-        userService.updateUser(id, name, email);
-        return "redirect:/users/" + id;
+        return null;
     }
 
     // ユーザ削除画面
     @GetMapping("/{id}/delete")
     public String deleteUserForm(@PathVariable int id, Model model) {
-        UserEntity user = userService.getUserById(id);
-        model.addAttribute("user", user);
-        return "delete";
+        return null;
     }
 
     // ユーザ削除処理
     @PostMapping("/{id}/delete")
     public String deleteUser(@PathVariable int id) {
-        userService.deleteUser(id);
-        return "redirect:/users";
+        return null;
     }
 }
