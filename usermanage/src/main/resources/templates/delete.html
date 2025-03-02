@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ユーザ削除</title>
+</head>
+<body>
+    <h1>ユーザ削除</h1>
+    <p>本当に削除しますか？</p>
+    <p>ID: <span th:text="${user.id}"></span></p>
+    <p>名前: <span th:text="${user.name}"></span></p>
+    <p>Email: <span th:text="${user.email}"></span></p>
+
+    <form th:action="@{/users/{id}/delete(id=${user.id})}" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit">削除</button>
+    </form>
+    <a href="/users">戻る</a>
+</body>
+</html>
