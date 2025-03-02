@@ -18,22 +18,24 @@ public class UserService {
     }
 
     public List<UserEntity> getAllUsers() {
-        return userRepository.findAll();
+        // 実装前
+        return null;
     }
 
     public UserEntity getUserById(int id) {
-        return userRepository.findById(id);
+        // 実装前
+        return null;
     }
 
     public void createUser(UserEntity user) {
-        userRepository.save(user);
+        // 実装前
     }
 
     public void updateUser(int id, UserEntity updatedUser) {
-        userRepository.update(id, updatedUser);
+        // 実装前
     }
 
     public void deleteUser(int id) {
-        userRepository.deleteById(id);
+        // 実装前
     }
 }

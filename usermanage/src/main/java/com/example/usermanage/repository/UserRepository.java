@@ -27,32 +27,28 @@ public class UserRepository {
 
     // 全ユーザ取得
     public List<UserEntity> findAll() {
-        String sql = "SELECT * FROM users";
-        return jdbcTemplate.query(sql, userRowMapper);
+        // 実装前
+        return null;
     }
 
     // IDでユーザ取得
     public UserEntity findById(int id) {
-        String sql = "SELECT * FROM users WHERE id = ?";
-        UserEntity user = jdbcTemplate.queryForObject(sql, userRowMapper, id);
-        return user;
+        // 実装前
+        return null;
     }
 
     // ユーザ登録
     public void save(UserEntity user) {
-        String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
-        jdbcTemplate.update(sql, user.getName(), user.getEmail());
+        // 実装前
     }
 
     // ユーザ更新
     public void update(int id, UserEntity user) {
-        String sql = "UPDATE users SET name = ?, email = ? WHERE id = ?";
-        jdbcTemplate.update(sql, user.getName(), user.getEmail(), id);
+        // 実装前
     }
 
     // ユーザ削除
     public void deleteById(int id) {
-        String sql = "DELETE FROM users WHERE id = ?";
-        jdbcTemplate.update(sql, id);
+        // 実装前
     }
 }

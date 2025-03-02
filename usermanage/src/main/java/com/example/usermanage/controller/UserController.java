@@ -25,60 +25,56 @@ public class UserController {
     // ユーザ一覧
     @GetMapping
     public String listUsers(Model model) {
-        List<UserEntity> userList = userService.getAllUsers();
-        model.addAttribute("userList", userList);
-        return "list";
+        // 実装前
+        return null;
     }
 
     // ユーザ詳細
     @GetMapping("/{id}")
     public String userDetail(@PathVariable int id, Model model) {
-        UserEntity user = userService.getUserById(id);
-        model.addAttribute("user", user);
-        return "detail";
+        // 実装前
+        return null;
     }
 
     // ユーザ追加画面
     @GetMapping("/create")
     public String createUserForm(Model model) {
-        model.addAttribute("user", new UserEntity());
-        return "create";
+        // 実装前
+        return null;
     }
 
     // ユーザ追加処理
     @PostMapping("/create")
     public String createUser(@ModelAttribute UserEntity user) {
-        userService.createUser(user);
-        return "redirect:/users";
+        // 実装前
+        return null;
     }
 
     // ユーザ更新画面
     @GetMapping("/{id}/edit")
     public String updateUserForm(@PathVariable int id, Model model) {
-        UserEntity user = userService.getUserById(id);
-        model.addAttribute("user", user);
-        return "update";
+        // 実装前
+        return null;
     }
 
     // ユーザ更新処理
     @PostMapping("/{id}/edit")
     public String updateUser(@PathVariable int id, @ModelAttribute UserEntity user) {
-        userService.updateUser(id, user);
-        return "redirect:/users/" + id;
+        // 実装前
+        return null;
     }
 
     // ユーザ削除画面
     @GetMapping("/{id}/delete")
     public String deleteUserForm(@PathVariable int id, Model model) {
-        UserEntity user = userService.getUserById(id);
-        model.addAttribute("user", user);
-        return "delete";
+        // 実装前
+        return null;
     }
 
     // ユーザ削除処理
     @PostMapping("/{id}/delete")
     public String deleteUser(@PathVariable int id) {
-        userService.deleteUser(id);
-        return "redirect:/users";
+        // 実装前
+        return null;
     }
 }
